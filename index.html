@@ -52,7 +52,7 @@
             <h2>What is it?</h2>
             A style of Programming that
             <ul>
-              <li class="fragment">
+              <li>
                 treats computation as the evaluation of mathematical function
               </li>
               <li class="fragment">avoids state and mutable data</li><br><br>
@@ -75,6 +75,37 @@
             - Decoupled, easy-to-test code
 
           </section>
+          <section data-markdown>
+            ## OOP
+              1. Data:
+                - OOP asks *What can I do with the data?*
+                - Producer: Class
+                - Consumer: Class method
+
+              2. State:
+                - The methods and objects in OOP have some internal state (method variables and object attributes) and they possibly have side effects affecting the state of computer’s peripherals, the global scope, or the state of an object or method. Variable assignment is one good sign of something having a state.
+          </section>
+          <section data-markdown>
+            ## FP
+              1. Data:
+                - Functional programming asks *How the data is constructed?*
+                - Producer: Type Constructor
+                - Consumer: Function
+
+              2. State:
+                - If a pure functional programming ever assigns to a variable, the variable must be considered and handled as immutable. There must not be a state in pure functional programming.
+                - Code with side effects is often separated from the main purely functional body of code
+                - State can be passed around as an argument to a function, this is called a continuation.
+          </section>
+          <section>
+            <h2>Choosing between OOP and FP</h2>
+            <p>
+              Object-oriented languages are good when you have a <b style="color:green">fixed set of operations</b> on things, and as your code evolves, you primarily add new things. This can be <b style="color:green">accomplished by adding new classes</b> which implement existing methods, and the existing classes are left alone.
+            </p><br>
+            <p class="fragment">
+              Functional languages are good when you have a <b style="color:red">fixed set of things</b>, and as your code evolves, you primarily add new operations on existing things. This can be accomplished <b style="color:red">by adding new functions</b> which compute with existing data types, and the existing functions are left alone.
+            </p>
+          </section>
         </section>
 
         <section data-markdown>
@@ -87,13 +118,13 @@
           <h2>Higher-order Functions</h2>
           <section>
             <ul>
-              <li class="fragment">Takes one or more functions as input</li>
+              <li>Takes one or more functions as input</li>
               <li class="fragment">Output a function</li>
             </ul>
           </section>
           <section>
             Takes one or more functions as input
-            <pre class="fragment">
+            <pre>
               <code>
                 function forEach(array) {
                   for (var i = 0; i < array.length; i++)
@@ -119,7 +150,7 @@
           </section>
           <section>
             Output a function
-            <pre class="fragment">
+            <pre>
               <code>
                 function greaterThan(n) {
                   return function(m) { return m > n; };
@@ -189,7 +220,7 @@
           <h2>Currying</h2>
           <section>
             <pre>
-              <code class="fragment">
+              <code>
                 function curry (binaryFn) {
                   return function (firstArg) {
                     return function (secondArg) {
@@ -283,7 +314,7 @@
         <section>
           <h2>How About Functional Programming in Java?</h2>
           <pre>
-            <code class="fragment">
+            <code>
           Collections.sort(persons, new Comparator() {
              public int compare(Person p1, Person p2){
                 return p1.name.compareTo(p2.name);
@@ -294,6 +325,18 @@
           Collections.sort(persons, (p1, p2) -> p1.name.compareTo(p2.name));
             </code>
           </pre>
+        </section>
+        <section>
+          <h2>Famous Quotes</h2>
+          <i>
+            The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle. — Joe Armstrong
+          </i><br><br>
+          <i>
+
+          </i><br><br>
+          <i>
+
+          </i>
         </section>
         <section>
           <br><br><br><br>
