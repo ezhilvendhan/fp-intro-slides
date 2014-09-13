@@ -49,6 +49,54 @@
 
         <section>
           <section>
+            <pre>
+              <code>
+                function squareAll(arr) {
+                  var result = [] //This where we collect results
+                  //Iterate the array
+                  for(idx = 0; idx < arr.length; idx++) {
+                    //Invoke the funciton on each element
+                    result.push(arr[idx] * arr[idx])
+                  }
+                  return result
+                }
+
+                function trimElements(arr) {
+                  var result = []
+                  for(idx = 0; idx < arr.length; idx++) {
+                    result.push(arr[idx].trim())
+                  }
+                  return result
+                }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <code class="fragment">
+                function map(arr, actionFn) {
+                  if(arr.length <= 0) {
+                    return []
+                  }
+                  var actionFnVal = actionFn(arr.shift());
+                  return [actionFnVal].concat(map(arr, actionFn))
+                }
+              </code>
+              <code>
+                function squareAll(arr) {
+                  return map(arr, function(x) {return x*x})
+                }
+
+                function trimElements(arr) {
+                  return map(arr, function(str) {return str.trim()})
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h2>What is it?</h2>
             A style of Programming that
             <ul>
@@ -327,7 +375,18 @@
           </pre>
         </section>
         <section>
+          <h2>JVM Languages</h2>
+          <ul>
+            <li>Scala</li>
+            <li>Clojure</li>
+          </ul>
+        </section>
+        <section>
           <h2>Famous Quotes</h2>
+          <i>
+            The major evolution that is still going on for me is towards a more functional programming style, which involves unlearning a lot of old habits, and backing away from some OOP directions.
+            —John Carmack
+          </i><br><br>
           <i>
             The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle. — Joe Armstrong
           </i><br><br>
